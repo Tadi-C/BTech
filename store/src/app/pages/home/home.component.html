@@ -1,0 +1,35 @@
+<main class="main" >
+  <!-- Page Title -->
+  <div class="page-title dark-background" style="background-image: url(assets/img/CNC-Machining-860x280.jpg);" >
+    <div class="container position-relative">
+      <h1>Store</h1>
+
+
+    </div>
+  </div><!-- End Page Title -->
+
+<div style="margin-top: 80px; margin-bottom: 6rem; margin-right: 5rem; margin-left: 5rem;">
+  <!-- Filters Section -->
+  <div class="filters">
+    <label for="brand">Brand:</label>
+    <select id="brand" class="custom-select" (change)="onBrandFilterChange($event)">
+      <option value="">All Brands</option>
+      <option *ngFor="let brand of brands" [value]="brand">{{ brand }}</option>
+    </select>
+
+    <label for="category">Category:</label>
+    <select class="custom-select" id="category" (change)="onCategoryFilterChange($event)">
+      <option value="">All Categories</option>
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+  </div>
+
+  <!-- Products Section -->
+  <mat-grid-list gutterSize="16" [cols]="cols" [rowHeight]="rowHeight">
+    <mat-grid-tile *ngFor="let product of filteredProducts">
+      <app-product [product]="product" class="w-full"></app-product>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+</main>

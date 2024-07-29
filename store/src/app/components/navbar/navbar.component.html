@@ -1,0 +1,15 @@
+<nav>
+  <div class="wrapper">
+    <div class="logo"><a (click)="goToPage('Landing')">B Tech</a></div>
+    <input type="radio" name="slider" id="menu-btn">
+    <input type="radio" name="slider" id="close-btn">
+    <ul class="nav-links">
+      <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+      <li><a (click)="goToPage('Landing')">Home</a></li>
+      <li><a (click)="goToPage('Home')">Store</a></li>
+      <li><a (click)="goToPage('Admin')">Admin</a></li>
+      <li><a (click)="openCart()">Cart</a></li>
+    </ul>
+    <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+  </div>
+</nav>

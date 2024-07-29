@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="single-product">
+    <div class="row">
+      <div class="col-6">
+        <div class="product-image">
+          <div class="product-image-main">
+            <img [src]="ProductImg" alt="" id="product-main-image">
+          </div>
+
+        </div>
+      </div>
+      <div class="col-6">
+
+
+        <div class="product">
+          <div class="product-title">
+            <h2>{{selectedProduct?.Name}}</h2>
+          </div>
+          <br>
+          <div class="product-price">
+            <span class="offer-price">R {{selectedProduct.Price}}</span>
+          </div>
+          <br>
+          <div class="product-details">
+            <h4 style="color: blueviolet;">{{selectedProduct.Brand}}</h4>
+          </div>
+          <div class="product-details">
+            <h4 >{{selectedProduct.Category}}</h4>
+          </div>
+          <div class="product-details">
+            <h3>Description</h3>
+            <div [innerHTML]="selectedProduct.Description | linebreacks"></div>
+          </div>
+
+
+
+
+          <span class="divider"></span>
+
+          <div class="product-btn-group">
+            <div class="button buy-now"><i class='bx bxs-zap'></i> Buy Now</div>
+            <div class="button add-cart" (click)="addToCart(selectedProduct)"><i class='bx bxs-cart'></i> Add to Cart</div>
+            <div class="button heart" (click)="goToPage('Home')"><i class='bx bxs-heart'></i>Continue Shopping</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

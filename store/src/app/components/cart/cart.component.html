@@ -1,0 +1,15 @@
+<h2>Your Cart</h2>
+<div *ngIf="cartItems.length > 0; else emptyCart">
+  <div *ngFor="let item of cartItems" class="cart-item">
+    <div class="cart-item-details">
+      <h4>{{item.Name}}</h4>
+      <p>{{item.Category}}</p>
+      <p>R {{item.Price }}</p>
+      <button mat-button (click)="removeFromCart(item.ID)">Remove</button>
+    </div>
+  </div>
+  <button mat-button (click)="clearCart()">Clear Cart</button>
+</div>
+<ng-template #emptyCart>
+  <p>Your cart is empty.</p>
+</ng-template>

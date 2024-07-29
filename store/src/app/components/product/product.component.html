@@ -1,0 +1,24 @@
+<div *ngIf="product" class="card"
+  style="background-color: white; width: 300px; display: flex; flex-direction: column; padding: 1rem;">
+  <mat-card-header style="padding: 1rem; flex-shrink: 0;" (click)="viewProduct(product)">
+    <img class="mb-1 rounded-md" alt="loading" [src]="ProductImage"
+      style="width: 100%; height: auto; max-height: 120px; object-fit: contain;" />
+  </mat-card-header>
+  <mat-card-content style="padding: 2rem 0 0 0; flex-grow: 1; overflow: hidden;">
+    <div class="w-full card-content"
+      style="height: 100%; display: flex; flex-direction: column; width: 90%; padding: 1rem;">
+      <div style="flex-grow: 1; overflow-y: auto;">
+        <h5 style="font-size: 1.1rem;">{{product.Name}}</h5>
+        <p class="hover:whitespace-normal truncate" style="font-size: 1rem;">{{product.Category}}</p>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-shrink: 0;">
+        <div>
+          <ng-container>
+            <span class="text-gray-500" style="font-size: 1rem;">{{product.Price | currency: 'R'}}</span>
+          </ng-container>
+        </div>
+        <mat-icon (click)="addToCart(product)" class="text-gray-500" style="font-size: 1.5rem;">shopping_cart</mat-icon>
+      </div>
+    </div>
+  </mat-card-content>
+</div>
